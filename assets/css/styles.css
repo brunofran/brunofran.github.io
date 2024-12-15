@@ -99,7 +99,6 @@ h3 {
 }
 
 p {
-    font-size: 1.25rem;
     text-align: justify;
 }
 
@@ -343,9 +342,13 @@ main,
     list-style: disc;
 }
 
-.card__buttons {
+.card__buttons, .description__buttons {
     display: flex;
-}
+    flex-flow: row wrap;
+    justify-content: center;
+  }
+
+
 
 .card__body .technologies__item {
     width: 4rem;
@@ -360,7 +363,6 @@ main,
 .about {
     display: flex;
     flex-direction: column;
-
     gap: 1.5rem;
     padding: 2rem 5rem;
 }
@@ -532,7 +534,7 @@ footer p {
     }
 
     h1 {
-        font-size: 4rem;
+        font-size: 5rem;
     }
 
     h2 {
@@ -540,7 +542,7 @@ footer p {
     }
 
     main,
-    .projects {
+    .projects, .about {
         padding: 8rem 6rem 4rem;
     }
 
@@ -633,6 +635,14 @@ footer p {
 
     }
 
+    .technologies__logo{
+        height: 3rem;
+    }
+
+    p, span, li{
+        font-size: 1.15rem;
+    }
+
     .projects__card {
         flex-direction: row;
     }
@@ -650,7 +660,8 @@ footer p {
         font-size: 1.25rem;
     }
 
-    .card__buttons .btn {
+    .card__buttons .btn,
+    .description__buttons .btn {
         width: auto;
     }
 }
@@ -664,10 +675,11 @@ footer p {
     h2 {
         font-size: 5rem;
     }
-
-    p {
-        font-size: 1.5rem;
+    
+    h3{
+        font-size: 3.5rem;
     }
+
 
     .header {
         padding: 1rem 15rem;
@@ -677,7 +689,7 @@ footer p {
         padding: 12rem 15rem 2rem;
     }
 
-    .technologies {
+    .technologies, .projects, .about{
         padding: 10rem 15rem 4rem;
     }
 }
