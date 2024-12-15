@@ -37,6 +37,10 @@ html[data-theme='light'] .brand__logo {
     filter: invert(1);
 }
 
+html[data-theme='light'] .technologies__logo {
+    filter: invert(80%);
+}
+
 
 * {
     margin: 0;
@@ -56,7 +60,10 @@ body {
 
 a {
     text-decoration: none;
+    color: var(--text-color);
 }
+
+
 
 a:hover {
     color: var(--primary-color);
@@ -71,9 +78,15 @@ b {
     font-weight: 400;
 }
 
-h1{
+h1 {
     font-size: 2.5rem;
     font-weight: 200;
+}
+
+h2 {
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 2rem;
 }
 
 h1,
@@ -85,7 +98,7 @@ h3 {
     font-weight: 200;
 }
 
-p{
+p {
     font-size: 1.25rem;
     text-align: justify;
 }
@@ -132,6 +145,7 @@ p{
     display: flex;
     align-items: center;
     gap: 0.5rem;
+    text-decoration: none;
 }
 
 
@@ -191,9 +205,11 @@ p{
     align-items: center;
     gap: 0.625rem;
     background: transparent;
+    border: none;
     border-radius: 3.125rem;
     padding: 0.875rem 1.5rem;
     cursor: pointer;
+    color: var(--primary-color);
 }
 
 .btn:hover {
@@ -219,43 +235,48 @@ main {
     display: flex;
     flex-direction: column;
     gap: 2rem;
+}
+
+main,
+.projects {
     padding: 2.5rem 1rem;
 }
 
-.main__content1{
+.main__content1 {
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
 }
 
-.main__content2{
+.main__content2 {
     width: 100%;
     aspect-ratio: 16/9;
 }
 
-.skills{
+.technologies {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
     gap: 1.25rem;
-    padding: 6.25rem 1rem 2rem 1rem;
+    padding: 6.25rem 1rem 2rem;
     background: var(--secondary-bg-color);
     margin-top: -5.5rem;
 }
-.skills h2{
+
+.technologies h2 {
     text-transform: none;
     font-size: 2rem;
 }
 
-.skills__list{
+.technologies__list {
     display: flex;
     flex-flow: row wrap;
     justify-content: space-between;
     gap: 0.5rem;
 }
 
-.skills__item{
+.technologies__item {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -268,9 +289,216 @@ main {
 
 }
 
-.skills__logo{
+.technologies__logo {
     height: 2.4rem;
 }
+
+.projects {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+}
+
+.projects__container {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+}
+
+.projects__card {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.card__cover {
+    width: 100%;
+    border-radius: 0.5rem;
+    object-fit: cover;
+    object-position: center;
+}
+
+.card__body {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-start;
+    gap: 1rem;
+}
+
+.card__title {
+    font-size: 1.5rem;
+}
+
+.card__description {
+    font-size: 1rem;
+    color: var(--primary-color);
+}
+
+.card__list {
+    margin-left: 1rem;
+}
+
+.card__item {
+    list-style: disc;
+}
+
+.card__buttons {
+    display: flex;
+}
+
+.card__body .technologies__item {
+    width: 4rem;
+    height: 4rem;
+}
+
+.card__body .technologies__logo {
+    height: 2rem;
+}
+
+
+.about {
+    display: flex;
+    flex-direction: column;
+
+    gap: 1.5rem;
+    padding: 2rem 5rem;
+}
+
+.projects .btn {
+    width: auto;
+    margin: auto;
+}
+
+.about__content1,
+.about__content2 {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 2rem;
+}
+
+.about__photo {
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+    pointer-events: none;
+    border-radius: 50rem;
+    border: 1px solid var(--primary-border-color);
+}
+
+.about__description {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 1.5rem;
+}
+
+.about__icons {
+    display: flex;
+    align-items: center;
+    gap: .85rem;
+}
+
+.about__icons i {
+    font-size: 1.25rem;
+}
+
+.about__content2 .col1,
+.about__content2 .col2 {
+    display: flex;
+    flex-direction: column;
+    text-align: justify;
+    gap: 2rem;
+}
+
+.about__content2 .col1 .row1,
+.about__content2 .col1 .row2 {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+#accordion {
+    border-radius: 0.5rem;
+    border: 1px solid var(--primary-border-color);
+}
+
+.accordion__header {
+    width: 100%;
+    display: flex;
+    padding: 0.75rem 1rem;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid var(--primary-border-color);
+    background: transparent;
+}
+
+.accordion__header span {
+    color: var(--title-color);
+    font-size: 1.15rem;
+}
+
+.accordion__header.start {
+    border-radius: 0.25rem 0.25rem 0rem 0rem;
+}
+
+.accordion__header.end,
+.accordion__item.active .accordion__body.end {
+    border-radius: 0rem 0rem 0.25rem 0.25rem;
+}
+
+.accordion__item.active .accordion__header.end {
+    border-radius: 0;
+}
+
+.accordion__body {
+    display: none;
+    padding: 1.25rem;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.625rem;
+    border: 1px solid var(--primary-border-color);
+}
+
+.accordion__item.active .accordion__header {
+    background-color: var(--secondary-bg-color);
+
+}
+
+
+.accordion__item.active .accordion__body {
+    display: flex;
+}
+
+.accordion__item.active .bi-caret-down-fill {
+    transform: rotate(180deg);
+}
+
+.contact {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+    border-top: 1px solid var(--primary-border-color);
+    border-bottom: 1px solid var(--primary-border-color);
+    padding: 4rem;
+}
+
+.contact p {
+    text-align: center;
+}
+
+.contact .btn {
+    width: auto;
+}
+
+.contact .email {
+    text-transform: lowercase;
+}
+
 footer {
     margin-bottom: 5rem;
 }
@@ -303,59 +531,127 @@ footer p {
         min-width: 30%;
     }
 
-    h1{
+    h1 {
         font-size: 4rem;
     }
 
-    main{
-        padding:  8rem 6rem 4rem 6rem;
+    h2 {
+        font-size: 3rem;
     }
 
-    .main__content1{
+    main,
+    .projects {
+        padding: 8rem 6rem 4rem;
+    }
+
+    .main__content1 {
         display: flex;
         flex-direction: column;
         align-items: flex-start;
-        
+
     }
 
-    .skills{
+    .technologies {
         padding: 6.25rem 6rem 2rem 6rem;
         margin-top: -6rem;
     }
+
+
 
     footer {
         margin: 0;
     }
 }
 
-@media (min-width: 1200px){
+@media(min-width: 992px) {
+    .projects__card {
+        flex-direction: row;
+    }
+
+    .projects__card.card--reverse {
+        flex-direction: row-reverse;
+        justify-content: space-between;
+    }
+
+    .card__cover {
+        width: 55%;
+    }
+
+    .about {
+        gap: 5rem;
+    }
+
+    .about__content1,
+    .about__content2 {
+        display: grid;
+        grid-template-columns: 34% 60%;
+        justify-content: flex-start;
+        align-items: flex-start;
+        gap: 4rem;
+    }
+
+    .about__description h2 {
+        text-align: left;
+    }
+
+    .description__buttons {
+        justify-content: flex-start;
+    }
+}
+
+@media (min-width: 1200px) {
     main {
         padding: 12rem 6rem 2rem;
     }
-    
-    .main__content1 .btn{
+
+    h2 {
+        font-size: 4rem;
+    }
+
+    .main__content1 .btn {
         width: auto;
     }
 
-    .skills {
+    .technologies {
         flex-direction: row;
         justify-content: space-between;
         padding: 10rem 6rem 4rem;
     }
 
-    .skills h2{
+    .technologies h2 {
         font-size: 3.5rem;
         width: 60%;
     }
 
-    .skills__list{
+    .technologies__list {
         gap: 1rem;
     }
 
-    .skills__item{
+    .technologies__item {
         width: 6rem;
         height: 6rem;
 
+    }
+
+    .projects__card {
+        flex-direction: row;
+    }
+
+    .card__cover {
+        width: 50%;
+    }
+
+    .card__title {
+        font-size: 3.25rem;
+    }
+
+    .card__description,
+    .card__item {
+        font-size: 1.25rem;
+    }
+
+    .card__buttons .btn {
+        width: auto;
     }
 }
 
@@ -365,19 +661,23 @@ footer p {
         font-size: 6.25rem;
     }
 
+    h2 {
+        font-size: 5rem;
+    }
+
     p {
         font-size: 1.5rem;
     }
-    
+
     .header {
         padding: 1rem 15rem;
     }
 
-    main{
+    main {
         padding: 12rem 15rem 2rem;
     }
 
-    .skills{
+    .technologies {
         padding: 10rem 15rem 4rem;
     }
 }
